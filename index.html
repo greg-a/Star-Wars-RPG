@@ -3,28 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+
+    <title>Star Wars RPG</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
     <div class="container">
 
-        <div class="pick-character">Test</div>
+        <div class="game-title">
+            <h2>Star Wars RPG</h2>
+        </div>
 
-        <div class="your-character"></div>
+        <div class="pick-character"></div>
 
-        <div class="enemies-section"></div>
+        <div class="your-character">
+            <h4>Your Character</h4>
+        </div>
 
-        <div class="fight-section"></div>
+        <div class="enemies-section">
+            <h4>Enemies Available to Attack</h4>
+        </div>
 
-        <div class="defender-section"></div>
+        <div class="fight-section">
+            <h4>Fight Section</h4>
+            <button id="attack-button">Attack</button>
+        </div>
+
+        <div class="defender-section">
+            <h4>Defender</h4>
+        </div>
 
     </div>
 
 
-    <script src="/assets/javascript/game.js"></script>
+    <script src="assets/javascript/game.js"></script>
 </body>
 </html>
