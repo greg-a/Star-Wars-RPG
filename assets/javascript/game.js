@@ -1,66 +1,105 @@
 var kylo = {
     name: "kylo-ren",
-    pic: document.createElement("img"),
+    imageBox: $("<div class='imagebox'></div>"),
+    pic: $("<img src='assets/images/kylo-ren.jpg' alt='kylo-ren' id='kylo-pic' class='character-button'>"),
+    healthDisplay: $("<div class='image-textbox' id='kylo-ren'></div>"),
+    healthPoints: 100,
+    attackPoints: 10,
+    counterAttack: 20
 }
 
-$(kylo.pic).addClass("character-button");
-$(kylo.pic).attr("alt",kylo.name);
-kylo.pic.src = "assets/images/kylo-ren.jpg";
-$(".pick-character").append(kylo.pic);
+$(kylo.healthDisplay).text("Health: " + kylo.healthPoints);
+$(".pick-character").append(kylo.imageBox);
+kylo.imageBox.append(kylo.healthDisplay);
+kylo.imageBox.append(kylo.pic);
+
+
 
 var rey = {
-    name: "rey-palpatine",
-    pic: document.createElement("img")
+    name: "rey",
+    imageBox: $("<div class='imagebox'></div>"),
+    pic: $("<img src='assets/images/rey.jpg' alt='rey' id='rey-pic' class='character-button'>"),
+    healthDisplay: $("<div class='image-textbox' id='rey'></div>"),
+    healthPoints: 105,
+    attackPoints: 10,
+    counterAttack: 20
 }
 
-$(rey.pic).addClass("character-button");
-$(rey.pic).attr("alt",rey.name);
-rey.pic.src = "assets/images/rey.jpg";
-$(".pick-character").append(rey.pic);
+$(rey.healthDisplay).text("Health: " + rey.healthPoints);
+$(".pick-character").append(rey.imageBox);
+rey.imageBox.append(rey.healthDisplay);
+rey.imageBox.append(rey.pic);
 
 var finn = {
-    name: "finn-st",
-    pic: document.createElement("img")
+    name: "finn",
+    imageBox: $("<div class='imagebox'></div>"),
+    pic: $("<img src='assets/images/finn.jpg' alt='finn' id='finn-pic' class='character-button'>"),
+    healthDisplay: $("<div class='image-textbox' id='finn'></div>"),
+    healthPoints: 101,
+    attackPoints: 10,
+    counterAttack: 20
 }
 
-$(finn.pic).addClass("character-button");
-$(finn.pic).attr("alt",finn.name);
-finn.pic.src = "assets/images/finn.jpg";
-$(".pick-character").append(finn.pic);
+$(finn.healthDisplay).text("Health: " + finn.healthPoints);
+$(".pick-character").append(finn.imageBox);
+finn.imageBox.append(finn.healthDisplay);
+finn.imageBox.append(finn.pic);
 
 var babyYoda = {
-    name: "baby-babyYoda",
-    pic: document.createElement("img")
+    name: "baby-yoda",
+    imageBox: $("<div class='imagebox'></div>"),
+    pic: $("<img src='assets/images/baby-yoda.jpg' alt='baby-yoda' id='yoda-pic' class='character-button'>"),
+    healthDisplay: $("<div class='image-textbox' id='baby-yoda'></div>"),
+    healthPoints: 102,
+    attackPoints: 10,
+    counterAttack: 20
 }
 
-$(babyYoda.pic).addClass("character-button");
-$(babyYoda.pic).attr("alt",babyYoda.name);
-babyYoda.pic.src = "assets/images/baby-yoda.jpg";
-$(".pick-character").append(babyYoda.pic);
+$(babyYoda.healthDisplay).text("Health: " + babyYoda.healthPoints);
+$(".pick-character").append(babyYoda.imageBox);
+babyYoda.imageBox.append(babyYoda.healthDisplay);
+babyYoda.imageBox.append(babyYoda.pic);
 
 var characters = [kylo,rey,finn,babyYoda];
 var yourCharacter;
-
-
-function createEnemies() {
-    for (var i = 0; i < characters.length; i++) {
-        if (characters[i].name !== yourCharacter) {
-            // $(".defender-section").append(this);
-            $(".enemy-section").append(characters[i].pic);
-        }
-    }
-}
-
+var yourEnemies = [];
+var defender;
 
 $(".character-button").on("click", function() {
-    yourCharacter = this.alt;
-    $(".your-character").append(this);  
+    if (yourCharacter == null) {
+        for (var i = 0; i < characters.length; i++) {
+            if (this.alt == characters[i].name) {
+                yourCharacter = characters[i];
+                $(".your-character").append(characters[i].imageBox);
+                $(characters[i].imageBox).append(characters[i].healthDisplay);
+                $(characters[i].imageBox).append(characters[i].pic);
+            }
+            else {
+                yourEnemies += characters[i];
+                $(".enemies-section").append(characters[i].imageBox);
+                $(characters[i].imageBox).append(characters[i].healthDisplay);
+                $(characters[i].imageBox).append(characters[i].pic);
+            }
+        }
+    }
+    else if (defender == null && this.alt !== yourCharacter) {
+        for (var i = 0; i < characters.length; i++) {
+            if (this.alt == characters[i].name) {
+                defender = characters[i];
+                $(".defender-section").append(characters[i].imageBox);
+                $(characters[i].imageBox).append(characters[i].healthDisplay);
+                $(characters[i].imageBox).append(characters[i].pic);
+            }
+        }   
+    }
 })
 
 $("#attack-button").on("click", function() {
-    createEnemies();
-    console.log(characters);
+    for (var i = 0; i < characters.length; i++) {
+        
+    }
 })
+
 
 
 
