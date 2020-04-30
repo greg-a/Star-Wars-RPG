@@ -5,9 +5,9 @@ var characters = [
         imageBox: $("<div class='imagebox'></div>"),
         pic: $("<img src='assets/images/kylo-ren.jpg' alt='Kylo Ren' id='kylo-pic' class='character-button'>"),
         healthDisplay: $("<div class='image-textbox' id='kylo-ren'></div>"),
-        healthPoints: 150,
+        healthPoints: 105,
         attackPoints: 10,
-        counterAttack: 20
+        counterAttack: 25
     },
     rey = {
         name: "Rey",
@@ -15,8 +15,8 @@ var characters = [
         imageBox: $("<div class='imagebox'></div>"),
         pic: $("<img src='assets/images/rey.jpg' alt='Rey' id='rey-pic' class='character-button'>"),
         healthDisplay: $("<div class='image-textbox' id='rey'></div>"),
-        healthPoints: 105,
-        attackPoints: 10,
+        healthPoints: 115,
+        attackPoints: 20,
         counterAttack: 20
     },
     finn = {
@@ -25,9 +25,9 @@ var characters = [
         imageBox: $("<div class='imagebox'></div>"),
         pic: $("<img src='assets/images/finn.jpg' alt='Finn' id='finn-pic' class='character-button'>"),
         healthDisplay: $("<div class='image-textbox' id='finn'></div>"),
-        healthPoints: 101,
-        attackPoints: 10,
-        counterAttack: 20
+        healthPoints: 140,
+        attackPoints: 18,
+        counterAttack: 10
     },
     babyYoda = {
         name: "Baby Yoda",
@@ -35,9 +35,9 @@ var characters = [
         imageBox: $("<div class='imagebox'></div>"),
         pic: $("<img src='assets/images/baby-yoda.jpg' alt='Baby Yoda' id='yoda-pic' class='character-button'>"),
         healthDisplay: $("<div class='image-textbox' id='baby-yoda'></div>"),
-        healthPoints: 102,
-        attackPoints: 10,
-        counterAttack: 20
+        healthPoints: 145,
+        attackPoints: 40,
+        counterAttack: 5
     }
 ]
 
